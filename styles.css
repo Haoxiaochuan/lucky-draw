@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./image/K.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(28, 35, 45, 0.8), rgba(40, 50, 60, 0.7));
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #C4A77D;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+}
+
+.rules-box, .winners-box {
+    background: rgba(28, 35, 45, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    color: #E8E8E8;
+    border: 1px solid rgba(196, 167, 125, 0.3);
+}
+
+h3 {
+    color: #C4A77D;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rules-box ol {
+    padding-left: 20px;
+}
+
+.rules-box li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #D0D0D0;
+}
+
+.lottery-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(196, 167, 125, 0.3);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 10px;
+}
+
+.grid-item {
+    background: #2C3542;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid rgba(196, 167, 125, 0.3);
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    filter: brightness(0.9);
+}
+
+.grid-item span {
+    color: #C4A77D;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.center {
+    background: linear-gradient(145deg, #2C3542, #1C232D);
+    border: 1px solid rgba(196, 167, 125, 0.5);
+}
+
+#draw-btn {
+    background: none;
+    border: none;
+    color: #C4A77D;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+#draw-btn:hover {
+    color: #D4B78D;
+    text-shadow: 0 0 10px rgba(196, 167, 125, 0.5);
+}
+
+.result-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2C3542;
+    color: #C4A77D;
+    padding: 15px 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: none;
+    border: 1px solid rgba(196, 167, 125, 0.3);
+}
+
+.result-popup.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+/* 修改响应式设计部分 */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .lottery-box {
+        padding: 15px;
+        order: 1;
+    }
+
+    .rules-box {
+        order: 2;
+    }
+
+    .winners-box {
+        order: 3;
+    }
+
+    .grid-container {
+        gap: 8px;
+        padding: 5px;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    .grid-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .grid-item span {
+        font-size: 0.8rem;
+    }
+
+    #draw-btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/* 针对更小屏幕的设备 */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 5px;
+    }
+
+    .rules-box, .winners-box, .lottery-box {
+        padding: 12px;
+    }
+
+    .grid-item {
+        padding: 8px;
+    }
+
+    .grid-item img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 8px;
+    }
+
+    .result-popup {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .rules-box li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+}

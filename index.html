@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCKY DRAW</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lucky Draw</h1>
+        
+        <div class="content">
+            <div class="rules-box">
+                <h3>LOTTERY RULES</h3>
+                <ol>
+                    <li> Click the draw button to participate in the draw.</li>
+                    <li>Each user has 1 chance to win the lottery.</li>
+                    <li>The lottery event time is from X, month X, 202X to X, month X, 202X.</li>
+                    <li>Prizes will be distributed within 2 hours of winning.</li>
+                    <li>If you can get one person to participate in the event within 1 hour, you will get another chance to win a free draw.And so on.</li>
+                </ol>
+            </div>
+
+            <div class="lottery-box">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="./image/ETH.jpg">
+                        <span>0.024</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/TRUMP.jpg">
+                        <span>3</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/SOL.jpg">
+                        <span>0.22</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/XRP.jpg">
+                        <span>15</span>
+                    </div>
+                    <div class="grid-item center">
+                        <button id="draw-btn">DRAW NOW</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/TRX.jpg">
+                        <span>270</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/BNB.jpg">
+                        <span>0.07</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/OKB.jpg">
+                        <span>1</span>
+                    </div>
+                    <div class="grid-item">
+                        <img src="./image/DOGE.jpg">
+                        <span>170</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="winners-box">
+                <h3>WINNER LIST</h3>
+                <div class="winners-list">
+                    <!-- 中奖名单将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="result-popup" id="result-popup">
+            <p id="result-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
